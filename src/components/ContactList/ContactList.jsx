@@ -1,21 +1,17 @@
 // ContactList.jsx
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import ContactItem from '../ContactItem/ContactItem';
 
-class ContactList extends Component {
-  render() {
-    const { contacts, deleteContact } = this.props;
-
-    return (
-      <div>
-        {contacts.map((contact) => (
-          <ContactItem key={contact.id} contact={contact} deleteContact={deleteContact} />
-        ))}
-      </div>
-    );
-  }
-}
+const ContactList = ({ contacts, deleteContact }) => {
+  return (
+    <div>
+      {contacts.map((contact) => (
+        <ContactItem key={contact.id} contact={contact} deleteContact={deleteContact} />
+      ))}
+    </div>
+  );
+};
 
 ContactList.propTypes = {
   contacts: PropTypes.arrayOf(
